@@ -31,6 +31,16 @@ class ClsPokemon:IPokemon{
         ClsPokemon obj_pokemon = new ClsPokemon();
         return this.DB.Single(obj_pokemon=>obj_pokemon.Id == id);
     }
+    public List<PokemonDTO> ConsultaPorTipo(string tipo){
+        List<PokemonDTO> Lista = new List<PokemonDTO>();
+         foreach(PokemonDTO item in this.DB){
+            if(item.Tipo.IndexOf(tipo)  != -1){
+                Lista.Add(item);
+            }
+         }
+        return Lista;
+        
+    }
 
     public  List<PokemonDTO> All(){
         return this.DB;

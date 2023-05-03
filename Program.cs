@@ -32,6 +32,11 @@ app.MapGet("/api/v1/pokemones/{id}", (int id) => {
     return Results.Ok(obj_pokemon.ConsultaUno(id));
 });
 
+//Para traer  todos los pokemones de un tipo
+app.MapGet("/api/v1/pokemones/tipo/{tipo}", (string tipo) => {
+    return Results.Ok(obj_pokemon.ConsultaPorTipo(tipo));
+});
+
 //Para editar 1 pokémon
 app.MapPut("/api/v1/pokemones/{id}", (int id, PokemonDTO obj_dto) => {
     obj_pokemon.Update(id, obj_dto);

@@ -6,4 +6,5 @@ interface IPokemon{
     PokemonDTO ConsultaUno(int id);
     void Update(int id,PokemonDTO obj_pokemon);
     List<PokemonDTO> All();
+    List<PokemonDTO> ConsultaPorTipo(string tipo);
 }
