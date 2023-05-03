@@ -1,0 +1,13 @@
+[{
+    "id": 2,
+    "nombre": "picachu",
+    "tipo": "electrico",
+    "habilidad": 0,
+    "defensa": 4
+}, {
+    "id": 3,
+    "nombre": "picachu",
+    "tipo": "electrico",
+    "habilidad": 0,
+    "defensa": 4
+}]
