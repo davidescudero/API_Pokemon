@@ -14,14 +14,23 @@ class ClsPokemon:IPokemon{
 
     public void AddMultiples(List<PokemonDTO> obj_pokemon){
         foreach(var item in obj_pokemon){
-        this.DB.Add(item);
+            this.DB.Add(item);
+        }
+    }
+
+    public void Update(int id, PokemonDTO obj_pokemon ){
+        PokemonDTO pokeUpdate = this.DB.Single(obj_pokemon => obj_pokemon.Id == id);
+         pokeUpdate.Nombre = obj_pokemon.Nombre;
+         pokeUpdate.Tipo = obj_pokemon.Tipo;
+         pokeUpdate.Habilidad = obj_pokemon.Habilidad;
+         pokeUpdate.Defensa = obj_pokemon.Defensa;
     }
         
-    }
-    /*public List<PokemonDTO> ConsultaUno(int id){
+    
+    public PokemonDTO ConsultaUno(int id){
         ClsPokemon obj_pokemon = new ClsPokemon();
-        return Results.Ok(this.DB.Single(obj_pokemon=>obj_pokemon.Id == id));
-    }*/
+        return this.DB.Single(obj_pokemon=>obj_pokemon.Id == id);
+    }
 
     public  List<PokemonDTO> All(){
         return this.DB;

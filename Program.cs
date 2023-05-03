@@ -27,20 +27,15 @@ app.MapDelete("/api/v1/pokemones/{id}", (int id) => {
     obj_pokemon.Delete(id);
 });
 
-/*
-
+//Para traer  1 pokémon
 app.MapGet("/api/v1/pokemones/{id}", (int id) => {
-    obj_pokemon.ConsultaUno(id);
+    return Results.Ok(obj_pokemon.ConsultaUno(id));
 });
 
-
+//Para editar 1 pokémon
 app.MapPut("/api/v1/pokemones/{id}", (int id, PokemonDTO obj_dto) => {
     obj_pokemon.Update(id, obj_dto);
 });
-*/
-
-
-
 
 
 app.Run();
